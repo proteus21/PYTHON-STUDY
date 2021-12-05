@@ -1,0 +1,109 @@
+#--------------------------------------
+# In loop calculation
+# Diffrent ways of write  out a data
+# Time of response
+#--------------------------------
+
+""" Calculate  for example = 5  1+2+3+4+5 = 15    score  15 """
+
+import time
+print("LOOP")
+
+def sum_1(liczba):
+  suma =0
+  for liczba in range(0, liczba+1):
+   suma=suma+liczba
+  return (suma)
+  
+# Calculate time of respone
+start =time.perf_counter()
+print(sum_1(5))
+end = time.perf_counter()
+print(end - start)
+print( "Sum 2")
+
+
+def sum_2(liczba):
+   print("List")
+   return  sum([liczba for liczba in range(0, liczba+1)])
+print(sum_2(5))
+
+def sum_22(liczba):
+   print("Set")
+   return  sum({liczba for liczba in range(0, liczba+1)})
+print(sum_22(5))
+
+def sum_23(liczba):
+   print("Generator")
+   return  sum((liczba for liczba in range(0, liczba+1)))
+print(sum_23(5))
+
+print("Arithmetic sequence")
+
+def sum_3(liczba):
+  return  (1+liczba)/2*(liczba)
+
+print(sum_3(5))
+
+print( "Time of response calculation")
+
+
+# Testing script timing
+start =time.perf_counter()
+print(sum_1(50000))
+end = time.perf_counter()
+print(end - start)
+
+start =time.perf_counter()
+print(sum_2(50000))
+end = time.perf_counter()
+print(end - start)
+
+start =time.perf_counter()
+print(sum_22(50000))
+end = time.perf_counter()
+print(end - start)
+
+start =time.perf_counter()
+print(sum_23(50000))
+end = time.perf_counter()
+print(end - start)
+
+start =time.perf_counter()
+print(sum_3(50000))
+end = time.perf_counter()
+print(end - start)
+
+def function_performenc(func, arg):
+    func(arg)
+
+def show_message(message):
+    print(message)
+
+print((function_performenc(show_message,"dawanj")))
+
+
+# create function and argument
+def time_calculation(func, arg):
+
+    start = time.perf_counter()
+    func(arg)
+    end = time.perf_counter()
+    return (end - start)
+
+print( time_calculation(sum_3,10000))
+
+
+# add more arguments
+
+def time_calculation(func, arg,loops_nr ):
+  suma = 0
+  for i in range(0, loops_nr):
+    start = time.perf_counter()
+    func(arg)
+    end = time.perf_counter()
+    suma= suma+((end - start))
+    # return wyswietla zawsze ostatnia wartosc obliczen
+  return suma
+
+print( time_calculation(sum_3,10000, 45))
