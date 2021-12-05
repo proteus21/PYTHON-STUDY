@@ -19,6 +19,9 @@ def silnia (x):
         return 1
     else:
          return x* silnia(x-1)
-
-
 print(silnia(1))
+
+
+a = int(input("Give variable amount a="))
+print(abs(a))
+
