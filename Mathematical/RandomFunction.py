@@ -15,3 +15,19 @@ while odp <3 los:
     elif odp > los:
       for i in 100:
             print("TRY")
+
+#-------------------------------------
+# randrange
+#------------------------------------
+import random
+LottoHit=[1,2,3]
+for x in range(1,8):
+    d = (random.randrange(0, 6, 1))
+    print(d)
+    if d in LottoHit:
+        print('OK')
+    else:
+         LottoHit.append(d)
+
+print(LottoHit)            
+            
