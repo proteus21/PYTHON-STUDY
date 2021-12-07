@@ -29,5 +29,24 @@ for x in range(1,8):
     else:
          LottoHit.append(d)
 
-print(LottoHit)            
+print(LottoHit)      
+
+
+#---------------------------------------
+# choice - returns a random element
+# choices - returns a list of items and has more capabilities
+#---------------------------------------
+
+import random
+
+movieList = ["Title 1", "Title 2", "Title 3", "Title 4"]
+
+event = ["death", "win", "lose", "lose gold", "lose life", "random item"]
+
+prizeCase = ["green", "orange", "purple", "legendary"]
+
+from collections import Counter
+
+print(Counter(random.choices(rewardZeSkrzydnki, [0.8, 0.15, 0.04, 0.01], k = 100)))
+
             
